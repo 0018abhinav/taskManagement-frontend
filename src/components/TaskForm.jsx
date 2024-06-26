@@ -17,7 +17,7 @@ function TaskForm({ currentTask, setCurrentTask, refreshTasks }) {
     if (currentTask) {
       try {
         await axios.patch(
-          `http://localhost:5000/tasks/${currentTask._id}`,
+          `https://task-management-backend-alpha-nine.vercel.app/tasks/${currentTask._id}`,
           task
         );
         refreshTasks();
@@ -27,7 +27,7 @@ function TaskForm({ currentTask, setCurrentTask, refreshTasks }) {
       }
     } else {
       try {
-        await axios.post("http://localhost:5000/tasks", task);
+        await axios.post("https://task-management-backend-alpha-nine.vercel.app/tasks", task);
         refreshTasks();
       } catch (error) {
         console.error("There was an error creating the task!", error);

@@ -12,7 +12,7 @@ function App() {
   const refreshTasks = async () => {
     console.log("refreshTasks");
     try {
-      const response = await axios.get("http://localhost:5000/tasks");
+      const response = await axios.get("https://task-management-backend-alpha-nine.vercel.app/tasks");
       setTasks(response.data);
     } catch (error) {
       console.error("There was an error fetching the tasks!", error);
@@ -26,7 +26,7 @@ function App() {
   const deleteTask = async (taskId) => {
     console.log(taskId);
     try {
-      await axios.delete(`http://localhost:5000/tasks/${taskId}`);
+      await axios.delete(`https://task-management-backend-alpha-nine.vercel.app/tasks/${taskId}`);
       refreshTasks();
       setCurrentTask(null);
     } catch (error) {
